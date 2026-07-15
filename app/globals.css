@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 8mm;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .invoice-print {
+    width: 100% !important;
+    max-width: none !important;
+    border: 1.5px solid black !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+}
+
+@media print {
+  html,
+  body {
+    overflow: visible !important;
+  }
+
+  .invoice-table-wrap {
+    overflow: visible !important;
+  }
+
+  .invoice-items-table {
+    width: 100% !important;
+    min-width: 0 !important;
+    table-layout: fixed !important;
+  }
+
+  .invoice-items-table th,
+  .invoice-items-table td {
+    overflow: visible !important;
+  }
+}

@@ -1,0 +1,15 @@
+Print/PDF fixes included
+
+- Item-table font and padding reduced for A4 printing.
+- GSTIN box and GSTIN font made smaller and kept on one line.
+- Horizontal item-table scrollbar is hidden in print/PDF output.
+- Item table is forced to fit the printable page width.
+- Amount in Words is calculated automatically from Grand Total.
+- Saved Invoices page is dynamic and always shows newly saved invoices.
+
+Installation
+1. Keep your existing .env.local file.
+2. Replace the existing project with this folder, or copy the changed files.
+3. Copy your existing .env.local into the new project root.
+4. Run npm install, then npm run dev.
+5. Commit and push to GitHub so Vercel deploys the update.
